@@ -1,0 +1,68 @@
+<div class="content-wrapper">
+    <nav class="navbar nav navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand nav__brand" routerLink="home">Quick<span>Mart</span> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           
+            <div class="d-flex nav__search" role="search">
+              <input class="form-control me-2" type="search" 
+              [(ngModel)]="searchTerm" (keyup)="search($event)"
+                placeholder="Search For Products" aria-label="Search">
+              <span class="fas fa-search  nav__search__icon" ></span>
+            </div>
+
+            <ul *ngIf="!isUserLoggedIn()" class="navbar-nav nav__links me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active nav__link" aria-current="page" routerLink="home"> 
+                    <i class="fas fa-home nav__icon"></i>Home</a>
+                </li>
+
+                <!-- <li class="nav-item">
+                  <a class="nav-link nav__link" routerLink="profile" >
+                    <i class="fas fa-box nav__icon"></i>Profile</a>
+                </li> -->
+
+                <li class="nav-item">
+                  <a class="nav-link nav__link" routerLink="user-login">
+                    <i class="fas fa-user nav__icon"></i>Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav__link" routerLink="cart">
+                    <i style="font-size: 30px;" class="fas fa-cart-plus nav__cart-icon" ></i>
+                    <div style="font-size: 10px;" class="badge bg-danger nav__cart-icon__number">{{totalItem}}</div></a>
+                </li>
+               
+              </ul>
+              <ul *ngIf="isUserLoggedIn()" class="navbar-nav nav__links me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active nav__link nav__link--link2" aria-current="page" routerLink="home"> 
+                    <i class="fas fa-home nav__icon"></i>Home</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link nav__link nav__link--link2" routerLink="profile" >
+                    <i class="fas fa-box nav__icon"></i>Profile</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link nav__link nav__link--link2"  (click)="logout()">
+                    <i class="fas fa-user nav__icon"></i>Logout</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav__link nav__link--link2" routerLink="cart">
+                    <i style="font-size: 30px;" class="fas fa-cart-plus nav__cart-icon" ></i>
+                    <div style="font-size: 10px;" class="badge bg-danger nav__cart-icon__number nav__cart-icon__number--number2">
+                      {{totalItem}}
+                    </div>
+                  </a>
+                </li>
+               
+              </ul>
+          </div>
+        </div>
+      </nav>
+</div>
+

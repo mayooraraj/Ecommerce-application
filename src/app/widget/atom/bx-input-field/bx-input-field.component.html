@@ -1,0 +1,12 @@
+<ng-container [formGroup]="parentForm">
+    <input [type]="type"   [style]="style"
+          [class]="class"
+          [placeholder]="placeholder"
+          [formControlName]="formControls"
+          [style.background-image]="'url(' + imageUrl + ')'"    
+          [ngClass]="{'invalid': parentForm.get(formControls)?.touched && parentForm.get(formControls)?.invalid}"
+          [ngClass]="{'valid': parentForm.get(formControls)?.touched && parentForm.get(formControls)?.valid}" 
+              
+    />
+</ng-container>
+

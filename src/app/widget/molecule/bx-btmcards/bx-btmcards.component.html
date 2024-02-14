@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="container">
+            <!--top card-->
+            <div class="card-top container-fluid">
+                <div class="container d-flex">
+                    <div class="item">
+                        <a (click)="filter('')">
+                            <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+                            <p>All products</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a (click)="filter('grocery')">
+                            <img src="../../../../assets/images/grocery.webp" alt="">
+                            <p>Grocery</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a (click)="filter('mobiles')">
+                            <img src="../../../../assets/images/mobile.webp" alt="">
+                            <p>Mobile</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a (click)="filter('appliances')">
+                            <img src="../../../../assets/images/applience.webp" alt="">
+                            <p>Appliances</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a>
+                            <img src="../../../../assets/images/travel.webp" alt="">
+                            <p>Travel</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a (click)="filter('electronics')">
+                            <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+                            <p>Electronics</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a (click)="filter('fashion')">
+                            <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
+                            <p>Fashion</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a (click)="filter('jewelery')">
+                            <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
+                            <p>Jewllery</p>
+                        </a>
+                    </div>
+                   
+                </div>
+        
+            </div>
+
+            <!--carosel-->
+            <app-bx-carousel></app-bx-carousel>
+
+            <!--bottom card products-->
+            <div class="row">
+                <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card">
+                            <img src="{{item.image}}" alt="">
+                            <div class="card__text">
+                                <h5 class="card__title">{{item.title}}</h5>
+                                <p class="card__title">{{item.description}}</p>
+                                <p><strong>Price:</strong> ${{item.price}}</p>
+                            </div>
+                            <button class="btn btn-primary" (click)="addtocart(item)">Add to cart</button>
+                        </div>
+                    </div>
+                </ng-container>
+        
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>
+  

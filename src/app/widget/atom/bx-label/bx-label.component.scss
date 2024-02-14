@@ -1,0 +1,23 @@
+.bx-label{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 40px;
+    
+    &--sign-up{
+        color: black;
+        font-size: 15px;
+    }
+    &--para{
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 25px;
+        opacity: .6;
+        margin-top: 25px;
+    }
+    &--para2{
+        font-size: 20px;
+        margin-top: 25px;
+        margin-bottom: 70px;
+    }
+}

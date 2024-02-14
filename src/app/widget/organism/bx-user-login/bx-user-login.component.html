@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="bx-user">
+            <div class="bx-user__left">
+                <div>
+                <app-bx-label [label]="'Looks Like You\'re New Here !'" [class]="'bx-label'" ></app-bx-label>
+                <app-bx-label [label]="'Ready to elevate your shopping experience ?'" [class]="'bx-label bx-label--para'" ></app-bx-label>
+                <app-bx-label [label]="'Sign Up Now'" [class]="'bx-label bx-label--para2'" ></app-bx-label>
+                </div>
+                <div >
+                  <app-bx-image [img]="'../../../../assets/images/shoping2.jpg'" [class]="'bx-image'"></app-bx-image>
+                </div>
+            </div>
+        <div class="bx-user__right">
+
+            <!--sign up form-->
+        <div *ngIf="!showLogin">
+           <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm.value)">
+           <app-bx-input-field [type]="'text'"
+            [class]="'bx-form-input'"
+            [placeholder]="'Enter Name'"
+            [formControls]="'name'"
+            [parentForm]="reactiveForm"
+            [imageUrl]="'../../../../assets/icons/name.svg'"
+            ></app-bx-input-field>
+
+            <app-bx-input-field [type]="'text'"
+            [class]="'bx-form-input'"
+            [placeholder]="'Enter Email'"
+            [formControls]="'email'"
+            [parentForm]="reactiveForm"
+            [imageUrl]="'../../../../assets/icons/email.svg'"></app-bx-input-field>
+         
+            <app-bx-input-field [type]="'text'"
+            [class]="'bx-form-input'"
+            [placeholder]="'Enter PhoneNumber'"
+            [formControls]="'phno'"
+            [parentForm]="reactiveForm"
+            [imageUrl]="'../../../../assets/icons/phone.svg'"></app-bx-input-field>
+        
+            <app-bx-button [btnText]="'Sign Up'" [style]="{'background-color':'#fb641b','width':'100%'}" [fontSize]="'17px'"></app-bx-button>
+           <a class="bx-user__right__loginOption" (click)="openLogin()">Already have account? Click to Login</a>
+        </form>
+        </div>
+        <!--login form-->
+        <div  *ngIf="showLogin">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmitloginform(loginForm.value)">
+                <app-bx-input-field [type]="'text'"
+                [class]="'bx-form-input'"
+                [placeholder]="'Enter Name'"
+                [formControls]="'username'"
+                [parentForm]="loginForm"
+                [imageUrl]="'../../../../assets/icons/name.svg'"
+            ></app-bx-input-field>
+                <app-bx-input-field [type]="'text'"
+                 [class]="'bx-form-input'"
+                 [placeholder]="'Enter Email'"
+                 [formControls]="'useremail'"
+                 [parentForm]="loginForm"
+                 [imageUrl]="'../../../../assets/icons/email.svg'"></app-bx-input-field>
+
+                <app-bx-input-field [type]="'text'"
+                [class]="'bx-form-input'"
+                [placeholder]="'Enter PhoneNumber'"
+                [formControls]="'userphno'"
+                [parentForm]="loginForm"
+                [imageUrl]="'../../../../assets/icons/phone.svg'"></app-bx-input-field>
+
+                 <app-bx-button [btnText]="'Log In'" [style]="{'background-color':'green','width':'100%'}" [fontSize]="'17px'"></app-bx-button>
+                 <a class="bx-user__right__loginOption" (click)="openSignUp()">Dont have account? Click to SignUp</a>
+                </form> 
+        </div>
+           
+        </div>
+        </div>
+    </div>
+</body>
+</html>

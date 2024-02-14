@@ -1,0 +1,11 @@
+@import "../../../../assets/variables/mixin.scss";
+.bx-image{
+    width: 90%;
+    border-radius:30px ;
+}
+
+@include mobile{
+    .bx-image{
+        display: none;
+    }
+}

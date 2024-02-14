@@ -1,0 +1,42 @@
+<div class="content-wrapper">
+  <div class="container">
+      <form [formGroup]="editProfileForm" class="bx-form" (ngSubmit)="onSubmit(editProfileForm.value)">
+        <div class="bx-form__data">
+          <img src="../../../../assets/images/user.png" class="bx-form__image">
+          <div class="d-flex">
+            <h4 class="bx-form__title">Edit Personal information</h4>
+            
+          </div>
+          <div class="name">
+            <app-bx-input-field [type]="'text'"
+            [class]="'bx-form-input bx-form-input--editform'"
+            [placeholder]="'Enter Name'"
+            [formControls]="'name'"
+            [parentForm]="editProfileForm"
+            ></app-bx-input-field>
+          </div>
+          <div>
+            <h4 class="bx-form__title">Email Address</h4>
+            <app-bx-input-field [type]="'text'"
+            [class]="'bx-form-input bx-form-input--editform'"
+            [placeholder]="'Enter Email'"
+            [formControls]="'email'"
+            [parentForm]="editProfileForm"
+            ></app-bx-input-field>
+          </div>
+          <div>
+            <h4 class="bx-form__title">Mobile Number</h4>
+            <app-bx-input-field [type]="'text'"
+            [class]="'bx-form-input bx-form-input--editform'"
+            [placeholder]="'Enter Mobile Number'"
+            [formControls]="'phno'"
+            [parentForm]="editProfileForm"
+            ></app-bx-input-field>
+          </div>
+
+          <button class="bx-form__savebtn" type="submit">Save</button>
+        </div>
+      </form>
+  </div>
+  <app-bx-footertop-cards></app-bx-footertop-cards>
+</div>

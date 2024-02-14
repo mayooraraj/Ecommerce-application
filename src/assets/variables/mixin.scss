@@ -1,0 +1,30 @@
+
+@mixin navtext{
+    color: $dark-blue;
+    font-family: $poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+//mobile minimum width 480px and maxwidth 768px
+
+@mixin mobile{
+    
+    @media (max-width:768px)
+    {
+    @content;  
+    }
+}
+
+
+//tablet
+@mixin tablet{
+    
+    @media only screen and (min-width: 768px) and (max-width: 1280px) {
+ 
+            @content;
+    }
+        
+}
