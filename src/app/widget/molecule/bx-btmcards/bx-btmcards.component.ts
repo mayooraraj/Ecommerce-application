@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 import { CommonserviceService } from 'src/app/service/commonservice.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-bx-btmcards',
@@ -41,7 +42,7 @@ export class BxBtmcardsComponent  implements OnInit{
   //to add product to cart
   addtocart(item:any){
     this.cartService.addtoCart(item);
-    alert("Item added to your cart")
+    Swal.fire('Success', 'Item added to your cart', 'success');
   }
 
   filter(category:string){

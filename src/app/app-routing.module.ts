@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BxHomepageComponent } from './pages/bx-homepage/bx-homepage.component';
 import { BxHeaderComponent } from './widget/organism/bx-header/bx-header.component';

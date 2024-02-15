@@ -1,5 +1,10 @@
 @import "/src/assets/variables/mixin.scss";
 
+.content-wrapper{
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .nav{
     padding-left: 3vw;
     background-color: #0d6efd;
